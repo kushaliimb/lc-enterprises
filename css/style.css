@@ -852,30 +852,39 @@ footer {
 
 /* Mobile: Show the toggle and stack the menu */
 @media (max-width: 600px) {
-  .menu-toggle {
-    display: flex; /* Reveal the hamburger icon */
-  }
-
   .nav-links {
-    display: none; /* Hide links by default on mobile */
+    display: none; /* or flex if 'show' class is active */
     flex-direction: column;
+    align-items: center; /* Centers the text horizontally */
+    
+    /* THE FIX: Spacing between items */
+    gap: 25px; 
+    
+    /* Add vertical padding to the entire container so it doesn't feel cramped */
+    padding: 40px 0; 
+    
     position: absolute;
-    top: 100%; /* Sits right under the navbar */
+    top: 70px; /* Adjust based on your navbar height */
     left: 0;
     width: 100%;
-    background: #fff;
-    padding: 2rem;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   }
 
-  /* This class will be added by JavaScript */
-  .nav-links.show {
-    display: flex;
+  .nav-links li {
+    list-style: none;
+    width: 100%;
+    text-align: center;
   }
 
-  /* Hide the WhatsApp button on mobile nav to save space, 
-     or keep it if you have room */
-  .btn-wa-nav {
-    display: none; 
+  .nav-links li a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #333;
+    /* Optional: add a subtle letter spacing for a premium feel */
+    letter-spacing: 1px; 
+    text-transform: uppercase;
   }
 }
