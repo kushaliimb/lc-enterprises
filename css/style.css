@@ -829,3 +829,53 @@ footer {
   .catalog-filter-bar { padding: 0.8rem 1.2rem; }
   .wholesale-wrap { padding-left: 1.2rem; padding-right: 1.2rem; }
 }
+
+/* Desktop: Hide the toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333; /* Use your brand's dark color */
+  border-radius: 10px;
+}
+
+/* Mobile: Show the toggle and stack the menu */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: flex; /* Reveal the hamburger icon */
+  }
+
+  .nav-links {
+    display: none; /* Hide links by default on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Sits right under the navbar */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+  }
+
+  /* This class will be added by JavaScript */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Hide the WhatsApp button on mobile nav to save space, 
+     or keep it if you have room */
+  .btn-wa-nav {
+    display: none; 
+  }
+}
